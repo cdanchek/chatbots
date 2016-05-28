@@ -1,0 +1,99 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Well, hello!
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT ARE YOU</pattern>
+        <template>
+            I'm a bot, silly!
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS WEATHER IN *</pattern>
+        <template>
+		{"WEB_SERVICE":"WEATHER","ARGS":{"PLACE":"<star/>"}}
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS TEMPERATURE IN *</pattern>
+        <template>
+		<srai>WHAT IS WEATHER IN <star/></srai>
+        </template>
+    </category>
+<category>
+    <pattern>ONE TIME I *</pattern>
+    <template>
+        <random>
+            <li>Go on.</li>
+            <li>How old are you?</li>
+            <li>Be more specific.</li>
+            <li>I did not know that.</li>
+            <li>Are you telling the truth?</li>
+            <li>I don't know what that means.</li>
+            <li>Try to tell me that another way.</li>
+            <li>Are you talking about an animal, vegetable or mineral?</li>
+            <li>What is it?</li>
+        </random>
+    </template>
+</category>
+
+   <category>
+      <pattern>MY DOGS NAME IS *</pattern>
+      <template>
+         That is interesting that you have a dog named <set name="dog"><star/></set>
+      </template>  
+   </category>  
+   <category>
+      <pattern>WHAT IS MY DOGS NAME</pattern>
+      <template>
+         Your dog's name is <get name="dog"/>.
+      </template>  
+   </category>  
+   <category>
+      <pattern>MY NAME IS *</pattern>
+      <template>
+         Well, hello <set name="yourname"><star/></set>
+      </template>  
+   </category>  
+   <category>
+      <pattern>i am  *</pattern>
+      <template>
+         <srai>My Name is <star/></srai>
+      </template>  
+   </category>  
+   <category>
+      <pattern>I LIKE *</pattern>
+      <template>
+         I too like <star/>.
+      </template>
+   </category>
+   <category>
+      <pattern>A * IS A *</pattern>
+   <template>
+      How <star index="1"/> can not be a <star index="2"/>?
+   </template>
+   </category>
+   <category>
+      <pattern> WHO IS ISAAC NEWTON </pattern>
+      <template>Isaac Newton was a english physicist and mathematician.</template>
+   </category>
+   <category>
+      <pattern> WHO IS ALBERT EINSTEIN </pattern>
+      <template>Albert Einstein was a german physicist.</template>
+   </category>
+   <category>
+      <pattern>DO YOU KNOW WHO * IS</pattern>
+      <template>
+         <srai>WHO IS <star/></srai>
+      </template>
+   </category>
+
+
+    
+</aiml>
